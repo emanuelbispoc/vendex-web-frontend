@@ -8,7 +8,7 @@ O sistema VENDEXPRESS (ou simplesmente VENDEX) oferece soluções em gerenciamen
 - Java
 - MySql
 - JPA
-- 
+  
 ## Funcionalidades
 - Emissão de cartão de credito para o programa de fidelidade
 - Monitoramento de vendas
