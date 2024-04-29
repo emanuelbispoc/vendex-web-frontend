@@ -16,4 +16,4 @@ O sistema VENDEXPRESS (ou simplesmente VENDEX) oferece soluções em gerenciamen
 - Gerenciar faturas (área do cliente)
 
 ## Time de desenvolvimento
-- Emanuel Bispo
+- Emanuel Bispo C.
