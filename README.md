@@ -1,4 +1,4 @@
-# VendEx
+# VendEx Web
 
 O sistema VENDEXPRESS (ou simplesmente VENDEX) oferece soluções em gerenciamento do setor de vendas, possibilitando que o controle de produtos, clientes e promoções seja feito de maneira mais eficaz. O sistema conta também com emissão de cartao do sistema de fidelidade para o cliente utilizar e fazer compras na loja. 
 
