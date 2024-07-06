@@ -10,10 +10,15 @@ O sistema VENDEXPRESS (ou simplesmente VENDEX) oferece soluções em gerenciamen
 - JPA
   
 ## Funcionalidades
-- Emissão de cartão de credito para o programa de fidelidade
-- Monitoramento de vendas
-- Gerenciamento promocional
-- Gerenciar faturas (área do cliente)
+- Gerenciar catálogo de produtos do sistema de vendas:
+    - Cadastrar produtos
+    - Editar produto
+    - Remover produto
+
+- Gerenciar  usuários do sistema
+    - Cadastrar usuário
+    - Editar usuário
+    - Remover usuário
 
 ## Time de desenvolvimento
 - Emanuel Bispo C.
