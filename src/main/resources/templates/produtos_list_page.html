@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/global.style.css}"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Catálogo</title>
+    </head>
+    <header th:insert="shared/header.html :: nav"></header>
+    <body>
+        <div class="container" style="margin-top: 86px">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>TÍTULO</th>
+                        <th>CATEGORIA</th>
+                        <th>PREÇO</th>
+                        <th>QTD. ESTOQUE</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="produto : ${produtos}">
+                        <td th:text="${produto.codigo}"></td>
+                        <td th:text="${produto.titulo}"></td>
+                        <td th:text="${produto.categoria}"></td>
+                        <td th:text="@{'R$' + ${produto.preco}}"></td>
+                        <td th:text="${produto.qtdEstoque}"></td>
+                        <td>
+                            <a class="btn btn-secundary btn-sm" th:href="@{/produtos/{codigo}/atualizar(codigo=${produto.codigo})}"> Editar</a>
+                            <a class="btn btn-danger btn-sm"> Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
