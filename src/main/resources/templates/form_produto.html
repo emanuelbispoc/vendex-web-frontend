@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/global.style.css}"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Catálogo</title>
+    </head>
+    <header th:insert="shared/header.html :: nav"></header>
+    <body>
+        <div class="container" style="margin-top: 55px">
+            <form class="form-group" th:action="${isEditingMode} ? @{/produtos/{id}/atualizar(id=${produto.id})} : @{/cadastrar-produto}" th:object="${produto}" method="post">
+                <div class="row"> 
+                    <div class="form-group col-sm-8">
+                        <label>Código:</label>
+                        <input
+                            id="input-codigo"
+                            class="form-control"
+                            type="text"
+                            th:field="*{codigo}"
+                            />
+                        <span class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></span> 
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>Qtd. estoque:</label>
+                        <input
+                            id="input-qtd-estoque"
+                            class="form-control"
+                            type="text"
+                            th:field="*{qtdEstoque}"
+                            />
+                        <span class="text-danger" th:if="${#fields.hasErrors('qtdEstoque')}" th:errors="*{qtdEstoque}"></span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12" style="margin-bottom: 31px">
+                    <label>Título:</label>
+                    <input
+                        id="input-titulo"
+                        class="form-control"
+                        type="text"
+                        th:field="*{titulo}"
+                        />
+                    <span class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span>
+                </div>
+                <div class="row" style="margin-bottom: 31px"> 
+                    <div class="form-group col-sm-8">
+                        <label>Categoria:</label>
+                        <input
+                            id="input-categoria"
+                            class="form-control"
+                            type="text"
+                            th:field="*{categoria}"
+                            />
+                        <span class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></span>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>Preço:</label>
+                        <input
+                            id="input-preco"
+                            class="form-control"
+                            type="number"
+                            step="0.01"
+                            th:field="*{preco}"
+                            />
+                        <span class="text-danger" th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12" style="margin-bottom: 31px">
+                    <label>Detalhes:</label>
+                    <textarea
+                        id="input-detalhes"
+                        class="form-control"
+                        type="text"
+                        rows="6"
+                        th:field="*{detalhes}"
+                        ></textarea>
+                    <span class="text-danger" th:if="${#fields.hasErrors('detalhes')}" th:errors="*{detalhes}"></span>
+                </div>
+                <div class="area-botao">
+                    <button class="btn btn-secundary" type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
