@@ -1,10 +1,8 @@
 package br.com.vendexpress.catalog.controller;
 
 import br.com.vendexpress.catalog.dto.ProdutoRequest;
-import br.com.vendexpress.catalog.entity.Produto;
 import jakarta.validation.Valid;
 import java.util.ArrayList;
-import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -44,6 +42,12 @@ public class CatalogoController {
         model.addAttribute("isEditingMode", true);
         
         return "form_produto";
+    }
+    
+    @GetMapping("/produtos/{id}/deletar")
+    public String deletarProduto(@PathVariable String id) {
+        
+        return "redirect:/produtos";
     }
     
     @PostMapping("/cadastrar-produto")
