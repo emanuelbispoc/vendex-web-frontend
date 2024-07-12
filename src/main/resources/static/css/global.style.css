@@ -55,18 +55,22 @@ body {
     background-color: #cc0000;
 }
 
-.btn.btn-primary-setenta {
-    width: 70%;
-    margin-top: 20px;
-    color: #FFFF;
-    border-color: #cc0000;
-    background-color: #cc0000;
-}
-
-.btn.btn-primary:active, .btn.btn-primary-setenta:active {
+.btn-secundary {
     color: #cc0000;
     border-color: #cc0000;
     background-color: #FFFF;
+}
+
+.btn-secundary:hover {
+    color: #cc0000;
+    border-color: #FFFF;
+    background-color: #FFFF;
+}
+
+.btn.btn-primary:active, .btn-secundary:active {
+    color: #cc0000;
+    border-color: #cc0000;
+    background-color: #cc0000;
 }
 
 @media screen and (min-width: 1725px) {
