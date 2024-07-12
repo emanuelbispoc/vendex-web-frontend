@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/global.style.css}"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Usuários</title>
+    </head>
+    <header th:insert="shared/header.html :: nav"></header>
+    <body>
+        <div class="container" style="margin-top: 86px">
+            <a class="btn btn-secundary btn-sm" th:href="@{/cadastrar-usuario}">Novo cadastro</a>
+            <table class="table" style="margin-top: 10px">
+                <thead>
+                    <tr>
+                        <th>NOME</th>
+                        <th>FUNÇÃO</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${produto.nome}"></td>
+                        <td th:text="${produto.funcao}"></td>
+                        <td>
+                            <a class="btn btn-secundary btn-sm" th:href="@{/usuarios/{id}/atualizar(id=${usuario.id})}">Editar</a>
+                            <a class="btn btn-danger btn-sm" th:href="@{/usuarios/{id}/deletar(id=${usuario.id})}">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
