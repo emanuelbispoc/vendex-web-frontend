@@ -30,8 +30,8 @@
                         <td th:text="@{'R$' + ${produto.preco}}"></td>
                         <td th:text="${produto.qtdEstoque}"></td>
                         <td>
-                            <a class="btn btn-secundary btn-sm" th:href="@{/produtos/{codigo}/atualizar(codigo=${produto.codigo})}"> Editar</a>
-                            <a class="btn btn-danger btn-sm"> Excluir</a>
+                            <a class="btn btn-secundary btn-sm" th:href="@{/produtos/{id}/atualizar(id=${produto.id})}">Editar</a>
+                            <a class="btn btn-danger btn-sm" th:href="@{/produtos/{id}/deletar(id=${produto.id})}">Excluir</a>
                         </td>
                     </tr>
                 </tbody>
