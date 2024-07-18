@@ -19,6 +19,14 @@ public class UsuarioRequest {
     public UsuarioRequest() {
     }
 
+    public UsuarioRequest(Long id, String nome, String login, String senha, FuncaoUsuario funcao) {
+        this.id = id;
+        this.nome = nome;
+        this.login = login;
+        this.senha = senha;
+        this.funcao = funcao;
+    }
+
     public Long getId() {
         return id;
     }

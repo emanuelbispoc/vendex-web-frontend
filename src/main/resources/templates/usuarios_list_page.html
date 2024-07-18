@@ -21,8 +21,8 @@
                 </thead>
                 <tbody>
                     <tr th:each="usuario : ${usuarios}">
-                        <td th:text="${produto.nome}"></td>
-                        <td th:text="${produto.funcao}"></td>
+                        <td th:text="${usuario.nome}"></td>
+                        <td th:text="${usuario.funcao}"></td>
                         <td>
                             <a class="btn btn-secundary btn-sm" th:href="@{/usuarios/{id}/atualizar(id=${usuario.id})}">Editar</a>
                             <a class="btn btn-danger btn-sm" th:href="@{/usuarios/{id}/deletar(id=${usuario.id})}">Excluir</a>
