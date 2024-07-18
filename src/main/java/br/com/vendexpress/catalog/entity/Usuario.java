@@ -1,16 +1,29 @@
 package br.com.vendexpress.catalog.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
     
-    public enum Funcao{
+    public enum Funcao {
         ADMINISTRADOR,
         OPERADOR
     }
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String login;
     private String senha;
+    @Enumerated(EnumType.STRING)
     private Funcao funcao;
 
     public Usuario() {

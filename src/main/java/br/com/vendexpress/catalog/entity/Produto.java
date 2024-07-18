@@ -1,9 +1,18 @@
 package br.com.vendexpress.catalog.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "produtos")
 public class Produto {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String codigo;
     private String titulo;
@@ -11,6 +20,19 @@ public class Produto {
     private BigDecimal preco;
     private String detalhes;
     private Long qtdEstoque;
+
+    public Produto(Long id, String codigo, String titulo, String categoria, BigDecimal preco, String detalhes, Long qtdEstoque) {
+        this.id = id;
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.categoria = categoria;
+        this.preco = preco;
+        this.detalhes = detalhes;
+        this.qtdEstoque = qtdEstoque;
+    }
+
+    public Produto() {
+    }
 
     public void setId(Long id) {
         this.id = id;
